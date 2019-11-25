@@ -1,0 +1,14 @@
+<h2>Favorites Page</h2>
+<div class="row">
+    <div class="col-4">
+      <ul class="cities list-group">
+        <li class="list-group-item" [class.active]="city===selectedCity" *ngFor="let city of favorites"
+          (click)="onSelect(city)">
+          <span [innerHTML]="city.name"></span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-8">
+      <app-weather-view [city]="selectedCity" (onChange)="initPage()"></app-weather-view>
+    </div>
+  </div>

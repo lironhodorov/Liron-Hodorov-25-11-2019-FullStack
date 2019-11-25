@@ -1,0 +1,6 @@
+<div class="p-4 wrapper" *ngIf="_city">
+    <div>{{_city.LocalizedName || _city.name}}</div>
+    <div *ngIf="weather">{{weather.text}} {{weather.value}}</div>
+    <button *ngIf="_city.isFavorite" (click)="RemoveFromFavorites()">RemoveFromFavorites</button>
+    <button *ngIf="!_city.isFavorite" (click)="AddToFavorites()">Add to favorites</button>
+</div>

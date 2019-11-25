@@ -1,0 +1,19 @@
+<div class="row mb-4">
+    <div class="col">
+      <input [(ngModel)]="tag" />
+      <button (click)="onSearch()">search</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <ul class="cities list-group">
+        <li class="list-group-item" [class.active]="city===selectedCity" *ngFor="let city of cities"
+          (click)="onSelect(city)">
+          <span [innerHTML]="city.LocalizedName"></span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-8">
+      <app-weather-view [city]="selectedCity" (onChange)="reloadData()"></app-weather-view>
+    </div>
+  </div>
